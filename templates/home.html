@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Bosh sahifa{% endblock title %}
+
+{% block content %}
+
+<div class="main-wrapper">
+
+    <section class="cta-section theme-bg-light py-5">
+        <div class="container text-center single-col-max-width">
+            <div class="jumbotron container">
+                <h1 class="display-4">Assalom alaykum!</h1>
+                <p class="lead">Shohjahon Mirakovning shaxsiy blogiga xush kelibsiz.</p>
+                <hr class="my-4">
+                <p>Bu yerda siz dasturlash va dasturchilarga oid so'nggi yangiliklardan xabardor bo'lib turasiz.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" style="padding: 0.3rem 1rem;" role="button">Postlarni ko'rish</a>
+                </p>
+            </div>
+        </div><!--//container-->
+    </section>
+
+</div><!--//main-wrapper-->
+
+
+{% endblock content %}

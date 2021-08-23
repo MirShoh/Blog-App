@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Postlar{% endblock title %}
+
+{% block content %}
+<section class="blog-list px-3 py-5 p-md-5" style="padding-left: 24%!important;">
+    <div class="container single-col-max-width">
+        {% for article in object_list %}
+        <div class="item mb-5">
+            <div class="row g-3 g-xl-0">
+                <div class="col-2 col-xl-3">
+                    {% if article.rasmi %}
+                    <a href="{% url 'article_detail' article.pk  %}"><img class="card-img-top" src="{{ article.rasmi.url }}"  alt="{{ article.maqola_nomi }}"></a>
+                    {% endif %}
+                </div>
+                <div class="col" style="margin-left: 15px;">
+                    <h3 class="title mb-1"><a class="text-link" href="{% url 'article_detail' article.pk  %}">{{ article.maqola_nomi }}</a></h3>
+                    <div class="meta mb-1"><span class="date">{{ article.muallifi | title }}</span><span class="time">{{ article.sanasi }}</span>
+                    </div>
+                    <div class="intro">{{ article.qisqacha }}...
+                    </div>
+                    <a class="text-link" href="{% url 'article_detail' article.pk  %}">Batafsil &rarr;</a>
+                </div><!--//col-->
+            </div><!--//row-->
+        </div><!--//item-->
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
